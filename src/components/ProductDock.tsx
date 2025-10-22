@@ -24,7 +24,7 @@ export function ProductDock({ products }: ProductDockProps) {
             return (
               <div key={product.id} className="flex items-center">
                 {showDivider && (
-                  <div className="h-12 w-px bg-border/40 mx-2" />
+                  <div className="h-12 w-px bg-border/70 mx-4" />
                 )}
                 <a
                   href={`#${product.id}`}
