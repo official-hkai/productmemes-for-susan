@@ -29,11 +29,9 @@ export function ProductDock({ products }: ProductDockProps) {
                     className="w-full h-full p-2 object-contain"
                   />
                 </DockIcon>
-                {product.count > 0 && (
-                  <span className="absolute -bottom-0.5 -right-0.5 w-5 h-5 rounded-full bg-gray-700 text-white text-[10px] font-semibold flex items-center justify-center shadow-md">
-                    {product.count}
-                  </span>
-                )}
+                <span className="absolute -bottom-0.5 -right-0.5 w-5 h-5 rounded-full bg-gray-700 text-white text-[10px] font-semibold flex items-center justify-center shadow-md">
+                  {product.count}
+                </span>
               </DockItem>
             </a>
           ))}
