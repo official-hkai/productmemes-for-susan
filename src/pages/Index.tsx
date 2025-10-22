@@ -2,6 +2,7 @@ import ArticleCard from "@/components/ArticleCard";
 import Timeline from "@/components/Timeline";
 import TableOfContents from "@/components/TableOfContents";
 import CategoryDivider from "@/components/CategoryDivider";
+import { ProductDock } from "@/components/ProductDock";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import qwenIcon from "@/assets/qwen-icon.png";
 import gptIcon from "@/assets/gpt-icon.png";
@@ -224,26 +225,12 @@ OpenAI公布了其"Stargate"AI基础设施平台的重大扩展计划，宣布�
           <p className="text-sm text-muted-foreground text-center">最新的人工智能技术更新与产品发布</p>
         </header>
 
-        <div className="relative mb-12">
-          <nav className="p-4 bg-muted/50 rounded-lg border border-border">
-            <div className="flex gap-4 items-center justify-center">
-              {articles.map(article => {
-              const subtitleCount = article.subtitles?.length || (article.timeline ? 1 : 0);
-              return <a key={article.id} href={`#${article.id}`} className="relative group transition-transform hover:scale-110">
-                    <img src={article.icon} alt={article.title} className="w-8 h-8 rounded-lg object-cover transition-all" />
-                    {subtitleCount > 0 && <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full text-[10px] font-semibold flex items-center justify-center" style={{
-                  backgroundColor: '#9333EA',
-                  color: 'white'
-                }}>
-                        {subtitleCount}
-                      </span>}
-                  </a>;
-            })}
-            </div>
-          </nav>
-          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent pointer-events-none rounded-l-lg" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent pointer-events-none rounded-r-lg" />
-        </div>
+        <ProductDock products={articles.map(article => ({
+          name: article.productName,
+          icon: article.icon,
+          count: article.subtitles?.length || (article.timeline ? article.timeline.length : 0),
+          id: article.id
+        }))} />
 
         <main>
           {articles.map((article, index) => {
