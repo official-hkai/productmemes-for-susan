@@ -1,6 +1,5 @@
 import ArticleCard from "@/components/ArticleCard";
 import Timeline from "@/components/Timeline";
-import { Timeline as ModernTimeline } from "@/components/ui/timeline";
 import TableOfContents from "@/components/TableOfContents";
 import CategoryDivider from "@/components/CategoryDivider";
 import { ProductDock } from "@/components/ProductDock";
@@ -378,26 +377,7 @@ WAN 2.5 是 LiblibAI 与通义万相团队联合研发的前沿多感官模型�
           return <div key={index}>
                 {showDivider && <CategoryDivider category={article.category} />}
                 {article.id === "deepseek-updates" && deepseekArticle?.timeline ? <ArticleCard id={article.id} icon={article.icon} productName={article.productName} title={article.title} date={article.date}>
-                    <ModernTimeline data={deepseekArticle.timeline.map(item => ({
-                      title: item.date,
-                      content: (
-                        <div className="mb-8">
-                          <h4 className="text-lg md:text-xl font-semibold text-foreground mb-4">
-                            {item.title}
-                          </h4>
-                          <div className="bg-muted/30 rounded-lg p-4 md:p-6 border border-border/50 backdrop-blur-sm">
-                            <ul className="space-y-3">
-                              {item.details.map((detail, idx) => (
-                                <li key={idx} className="text-sm md:text-base text-foreground/90 leading-relaxed flex gap-3">
-                                  <span className="text-primary mt-1 flex-shrink-0">•</span>
-                                  <span className="flex-1">{detail}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      )
-                    }))} />
+                    <Timeline items={deepseekArticle.timeline} />
                   </ArticleCard> : article.id === "qwen-updates" && qwenArticle?.subtitles && qwenArticle?.content ? <ArticleCard id={article.id} icon={article.icon} productName={article.productName} title={article.title} date={article.date}>
                     <div className="prose prose-slate max-w-none">
                       <p className="text-foreground/90 mb-6 leading-relaxed">
