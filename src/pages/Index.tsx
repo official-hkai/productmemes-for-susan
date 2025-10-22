@@ -1,5 +1,5 @@
 import ArticleCard from "@/components/ArticleCard";
-import Timeline from "@/components/Timeline";
+import { Timeline } from "@/components/ui/timeline";
 import TableOfContents from "@/components/TableOfContents";
 import CategoryDivider from "@/components/CategoryDivider";
 import { ProductDock } from "@/components/ProductDock";
@@ -377,7 +377,24 @@ WAN 2.5 是 LiblibAI 与通义万相团队联合研发的前沿多感官模型�
           return <div key={index}>
                 {showDivider && <CategoryDivider category={article.category} />}
                 {article.id === "deepseek-updates" && deepseekArticle?.timeline ? <ArticleCard id={article.id} icon={article.icon} productName={article.productName} title={article.title} date={article.date}>
-                    <Timeline items={deepseekArticle.timeline} />
+                    <Timeline data={deepseekArticle.timeline.map(item => ({
+                      title: item.date,
+                      content: (
+                        <div className="mb-4">
+                          <h4 className="text-lg font-semibold text-foreground mb-3">{item.title}</h4>
+                          <div className="bg-muted/30 rounded-lg p-4 border border-border">
+                            <ul className="space-y-2">
+                              {item.details.map((detail, idx) => (
+                                <li key={idx} className="text-sm text-foreground/90 leading-relaxed flex gap-2">
+                                  <span className="text-primary mt-1">•</span>
+                                  <span className="flex-1">{detail}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      )
+                    }))} />
                   </ArticleCard> : article.id === "qwen-updates" && qwenArticle?.subtitles && qwenArticle?.content ? <ArticleCard id={article.id} icon={article.icon} productName={article.productName} title={article.title} date={article.date}>
                     <div className="prose prose-slate max-w-none">
                       <p className="text-foreground/90 mb-6 leading-relaxed">
