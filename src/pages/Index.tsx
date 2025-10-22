@@ -3,6 +3,7 @@ import Timeline from "@/components/Timeline";
 import TableOfContents from "@/components/TableOfContents";
 import CategoryDivider from "@/components/CategoryDivider";
 import { ProductDock } from "@/components/ProductDock";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import qwenIcon from "@/assets/qwen-icon.png";
 import gptIcon from "@/assets/gpt-icon.png";
@@ -421,6 +422,7 @@ WAN 2.5 是 LiblibAI 与通义万相团队联合研发的前沿多感官模型�
           <p>© 2025 AI动态简报 · 技术突破与产品创新</p>
         </footer>
       </div>
+      <ScrollToTop />
     </div>;
 };
 export default Index;
