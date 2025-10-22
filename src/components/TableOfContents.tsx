@@ -41,7 +41,7 @@ const TableOfContents = ({ items }: TableOfContentsProps) => {
     }
   };
 
-  const categories = ["基础大模型", "图像模型"];
+  const categories = ["基础大模型", "通用明星产品", "图像模型"];
 
   return (
     <aside className="hidden xl:block fixed right-8 top-32 w-64">

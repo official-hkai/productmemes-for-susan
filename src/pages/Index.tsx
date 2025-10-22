@@ -359,12 +359,15 @@ WAN 2.5 是 LiblibAI 与通义万相团队联合研发的前沿多感官模型�
           <p className="text-sm text-muted-foreground text-center">最新的人工智能技术更新与产品发布</p>
         </header>
 
-        <ProductDock products={articles.map(article => ({
-          name: article.productName,
-          icon: article.icon,
-          count: article.subtitles?.length || (article.timeline ? article.timeline.length : 0),
-          id: article.id
-        }))} />
+        <ProductDock products={articles.map(article => {
+          const count = article.subtitles?.length || (article.timeline ? article.timeline.length : 1);
+          return {
+            name: article.productName,
+            icon: article.icon,
+            count: count,
+            id: article.id
+          };
+        })} />
 
         <main>
           {articles.map((article, index) => {
