@@ -36,7 +36,11 @@ export function ProductDock({ products }: ProductDockProps) {
                       <img 
                         src={product.icon} 
                         alt={product.name}
-                        className="w-full h-full p-2 object-contain"
+                        className={`w-full h-full p-2 object-contain ${
+                          ['flow-updates', 'pixel-updates', 'liblibai-updates'].includes(product.id) 
+                            ? 'rounded-full object-cover' 
+                            : ''
+                        }`}
                       />
                     </DockIcon>
                     <span className="absolute -bottom-0.5 -right-0.5 w-5 h-5 rounded-full bg-gray-700 text-white text-[10px] font-semibold flex items-center justify-center shadow-md">
