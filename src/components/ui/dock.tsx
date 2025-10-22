@@ -35,7 +35,7 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
 );
 Dock.displayName = 'Dock';
 
-export interface DockItemProps {
+export interface DockItemProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
   children: React.ReactNode;
 }

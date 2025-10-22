@@ -12,6 +12,22 @@ interface ProductDockProps {
   products: Product[];
 }
 
+const getProductColor = (productId: string): string => {
+  const colorMap: Record<string, string> = {
+    'gpt-updates': 'rgba(116, 195, 194, 0.1)',
+    'claude-updates': 'rgba(204, 157, 126, 0.1)',
+    'gemini-updates': 'rgba(138, 180, 248, 0.1)',
+    'deepseek-updates': 'rgba(59, 130, 246, 0.1)',
+    'qwen-updates': 'rgba(99, 102, 241, 0.1)',
+    'flow-updates': 'rgba(255, 107, 107, 0.1)',
+    'metaso-updates': 'rgba(59, 130, 246, 0.1)',
+    'pixel-updates': 'rgba(66, 133, 244, 0.1)',
+    'wenxin-updates': 'rgba(35, 164, 251, 0.1)',
+    'liblibai-updates': 'rgba(168, 85, 247, 0.1)',
+  };
+  return colorMap[productId] || 'rgba(255, 255, 255, 0.1)';
+};
+
 export function ProductDock({ products }: ProductDockProps) {
   return (
     <div className="relative mb-12">
@@ -30,7 +46,12 @@ export function ProductDock({ products }: ProductDockProps) {
                   href={`#${product.id}`}
                   className="group"
                 >
-                  <DockItem className="aspect-square rounded-full bg-white shadow-lg w-12 h-12 transition-all duration-300 hover:scale-125 hover:shadow-xl">
+                  <DockItem 
+                    className="aspect-square rounded-full shadow-lg w-12 h-12 transition-all duration-300 hover:scale-125 hover:shadow-xl backdrop-blur-sm"
+                    style={{
+                      backgroundColor: getProductColor(product.id)
+                    }}
+                  >
                     <DockLabel>{product.name}</DockLabel>
                     <DockIcon>
                       <img 
