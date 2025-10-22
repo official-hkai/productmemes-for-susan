@@ -8,6 +8,20 @@ interface Product {
   category?: string;
 }
 
+// 为每个产品定义主色调
+const productColors: Record<string, string> = {
+  'qwen-updates': 'rgba(125, 80, 255, 0.1)', // 紫色
+  'chatgpt-updates': 'rgba(16, 163, 127, 0.1)', // 青绿色
+  'gemini-updates': 'rgba(66, 133, 244, 0.1)', // 蓝色
+  'flow-updates': 'rgba(255, 107, 107, 0.1)', // 红色
+  'claude-updates': 'rgba(204, 147, 99, 0.1)', // 橙棕色
+  'metaso-updates': 'rgba(59, 130, 246, 0.1)', // 天蓝色
+  'deepseek-updates': 'rgba(66, 133, 244, 0.1)', // 蓝色
+  'wenxin-updates': 'rgba(10, 81, 195, 0.1)', // 深蓝色
+  'pixel-updates': 'rgba(66, 133, 244, 0.1)', // 谷歌蓝
+  'liblibai-updates': 'rgba(139, 92, 246, 0.1)', // 紫色
+};
+
 interface ProductDockProps {
   products: Product[];
 }
@@ -30,7 +44,12 @@ export function ProductDock({ products }: ProductDockProps) {
                   href={`#${product.id}`}
                   className="group"
                 >
-                  <DockItem className="aspect-square rounded-full bg-white shadow-lg w-12 h-12 md:w-12 md:h-12 transition-all duration-300 hover:scale-125 hover:shadow-xl">
+                  <DockItem 
+                    className="aspect-square rounded-full shadow-lg w-12 h-12 md:w-12 md:h-12 transition-all duration-300 hover:scale-125 hover:shadow-xl backdrop-blur-md border border-white/20"
+                    style={{
+                      backgroundColor: productColors[product.id] || 'rgba(255, 255, 255, 0.1)'
+                    }}
+                  >
                     <DockLabel>{product.name}</DockLabel>
                     <DockIcon>
                       <img 
