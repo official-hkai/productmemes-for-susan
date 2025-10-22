@@ -32,7 +32,7 @@ export function ScrollToTop() {
         <Button
           onClick={scrollToTop}
           size="icon"
-          className="fixed bottom-8 right-8 z-50 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+          className="fixed bottom-8 right-8 z-50 rounded-full shadow-lg transition-all duration-300 hover:scale-110 bg-gray-700 hover:bg-gray-800 text-white"
           aria-label="回到顶部"
         >
           <ArrowUp className="h-5 w-5" />
