@@ -7,13 +7,11 @@ import qwenIcon from "@/assets/qwen-icon.png";
 import gptIcon from "@/assets/gpt-icon.png";
 import pixelIcon from "@/assets/pixel-icon.jpg";
 import deepseekIcon from "@/assets/deepseek-color.svg";
-
 interface TimelineItem {
   date: string;
   title: string;
   details: string[];
 }
-
 interface Article {
   id: string;
   icon: string;
@@ -25,26 +23,16 @@ interface Article {
   subtitles?: string[];
   timeline?: TimelineItem[];
 }
-
 const Index = () => {
-  const articles: Article[] = [
-    {
-      id: "qwen-updates",
-      icon: qwenIcon,
-      productName: "通义千问",
-      title: "通义千问密集发布多款AI模型，技术突破与产品创新齐头并进",
-      date: "2025年9月23日",
-      category: "基础大模型",
-      subtitles: [
-        "旗舰模型Qwen3-Max强势登场",
-        "Qwen3-VL多模态模型全面升级",
-        "Qwen3-Coder代码模型优化升级",
-        "安全护栏模型Qwen3Guard保障交互",
-        "图像编辑模型Qwen-Image-Edit-2509增强一致性",
-        "多模态同传模型Qwen3-LiveTranslate实现实时翻译",
-        "旅行规划助手打造智能行程"
-      ],
-      content: `在今日的密集发布浪潮中，通义千问团队通过社交媒体预告了6个重大更新，涵盖新产品、开源项目和API接口，彰显了其在AI领域的快速迭代与全面布局。以下为今日发布的具体内容。
+  const articles: Article[] = [{
+    id: "qwen-updates",
+    icon: qwenIcon,
+    productName: "通义千问",
+    title: "通义千问密集发布多款AI模型，技术突破与产品创新齐头并进",
+    date: "2025年9月23日",
+    category: "基础大模型",
+    subtitles: ["旗舰模型Qwen3-Max强势登场", "Qwen3-VL多模态模型全面升级", "Qwen3-Coder代码模型优化升级", "安全护栏模型Qwen3Guard保障交互", "图像编辑模型Qwen-Image-Edit-2509增强一致性", "多模态同传模型Qwen3-LiveTranslate实现实时翻译", "旅行规划助手打造智能行程"],
+    content: `在今日的密集发布浪潮中，通义千问团队通过社交媒体预告了6个重大更新，涵盖新产品、开源项目和API接口，彰显了其在AI领域的快速迭代与全面布局。以下为今日发布的具体内容。
 
 旗舰模型Qwen3-Max强势登场
 通义千问团队发布了全新旗舰模型Qwen3-Max，无需预览直接提供强大能力，在编码和智能代理技能方面实现显著提升，基于大规模数据和计算资源优化。
@@ -95,20 +83,15 @@ Qwen3-Coder代码模型优化升级
 - 产品上线：已在Qwen Chat平台上线，支持行程下载和分享功能。
 
 今日的系列发布不仅展示了通义千问在AI技术前沿的持续突破，还通过开源与产品化结合，推动了整个生态的协同发展，为开发者和用户提供了更丰富的工具与体验。`
-    },
-    {
-      id: "chatgpt-updates",
-      icon: gptIcon,
-      productName: "ChatGPT",
-      title: "ChatGPT新动态：专用代码模型发布，全球开发者活动与算力基建同步扩张",
-      date: "2025年9月23日",
-      category: "基础大模型",
-      subtitles: [
-        "专为代码而生，新模型GPT-5-Codex正式上线API",
-        "携手Oracle与SoftBank，OpenAI加速万亿级AI基础设施建设",
-        "连接全球开发者，DevDay [Exchange]系列线下活动开放申请"
-      ],
-      content: `OpenAI正从核心技术的产品化、全球开发者生态的建设，到关乎未来的AI基础设施布局等多个维度，加速其发展步伐。
+  }, {
+    id: "chatgpt-updates",
+    icon: gptIcon,
+    productName: "ChatGPT",
+    title: "ChatGPT新动态：专用代码模型发布，全球开发者活动与算力基建同步扩张",
+    date: "2025年9月23日",
+    category: "基础大模型",
+    subtitles: ["专为代码而生，新模型GPT-5-Codex正式上线API", "携手Oracle与SoftBank，OpenAI加速万亿级AI基础设施建设", "连接全球开发者，DevDay [Exchange]系列线下活动开放申请"],
+    content: `OpenAI正从核心技术的产品化、全球开发者生态的建设，到关乎未来的AI基础设施布局等多个维度，加速其发展步伐。
 
 专为代码而生，新模型GPT-5-Codex正式上线API
 OpenAI宣布推出一款专为编码场景设计的特殊用途模型gpt-5-Codex。官方强调了该模型的一些关键特性：
@@ -124,99 +107,55 @@ OpenAI公布了其"Stargate"AI基础设施平台的重大扩展计划，宣布�
 在开发者生态建设方面，OpenAI启动了名为"DevDay [Exchange]"的系列线下活动，并已开放申请通道。这被定义为一系列"小范围的亲密聚会"，旨在连接世界各地的本地开发者。活动将在全球五大城市巡回举办，包括圣保罗（10月16日）、伦敦（10月21日）、班加罗尔（11月4日）、东京（11月11日）和首尔（11月13日）。由于活动席位有限，有兴趣的开发者需要通过官方链接提交申请。
 
 另外值得关注的是，OpenAI与NVIDIA的合作也达到了新的里程碑。NVIDIA宣布将与OpenAI建立合作伙伴关系，使用数百万颗NVIDIA GPU为OpenAI构建多个吉瓦规模的"AI工厂"，为其数据中心提供10吉瓦的GPU算力。OpenAI CEO Sam Altman与联合创始人Greg Brockman均对双方近十年的合作表示高度肯定。Sam Altman本人分享了一篇题为"丰裕智能"（Abundant Intelligence）的文章，引发了外界的广泛关注。`
-    },
-    {
-      id: "deepseek-updates",
-      icon: deepseekIcon,
-      productName: "DeepSeek",
-      title: "DeepSeek更新回顾",
-      date: "2025年9月23日",
-      category: "基础大模型",
-      timeline: [
-        {
-          date: "2025-09-29",
-          title: "DeepSeek-V3.2-Exp",
-          details: [
-            "deepseek-chat 和 deepseek-reasoner 都已升级为 DeepSeek-V3.2-Exp",
-            "deepseek-chat 对应非思考模式，deepseek-reasoner 对应思考模式"
-          ]
-        },
-        {
-          date: "2025-09-22",
-          title: "DeepSeek-V3.1-Terminus",
-          details: [
-            "语言一致性：缓解了中英文混杂、偶发异常字符等情况",
-            "Agent能力：进一步优化了 Code Agent 与 Search Agent 的表现"
-          ]
-        },
-        {
-          date: "2025-08-21",
-          title: "DeepSeek-V3.1",
-          details: [
-            "混合推理架构：一个模型同时支持思考模式与非思考模式",
-            "更高的思考效率：相比 DeepSeek-R1-0528，能在更短时间内给出答案",
-            "更强的 Agent 能力：SWE-bench Verified 达到 66.0"
-          ]
-        },
-        {
-          date: "2025-05-28",
-          title: "deepseek-reasoner升级",
-          details: [
-            "推理能力增强：AIME 2025 从 70.0 提升至 87.5，GPQA 从 71.5 提升至 81.0",
-            "Web前端开发能力优化：生成的网页与游戏更加美观",
-            "幻觉降低：极大程度抑制了幻觉问题",
-            "新增 JSON Output 与 Function Calling 支持"
-          ]
-        },
-        {
-          date: "2025-03-24",
-          title: "deepseek-chat升级",
-          details: [
-            "推理能力增强：MMLU-Pro 从 75.9 提升至 81.2，AIME 从 39.6 提升至 59.4",
-            "Web前端开发能力优化：代码生成准确率提升",
-            "中文写作能力升级：实现与R1写作风格对齐",
-            "Function Calling 能力改进"
-          ]
-        },
-        {
-          date: "2025-01-20",
-          title: "DeepSeek-R1正式发布",
-          details: [
-            "推出新模型 deepseek-reasoner (DeepSeek-R1)",
-            "专注于推理能力的提升"
-          ]
-        },
-        {
-          date: "2024-12-26",
-          title: "DeepSeek-V3正式发布",
-          details: [
-            "deepseek-chat 模型升级为 DeepSeek-V3",
-            "全面提升各项能力指标"
-          ]
-        },
-        {
-          date: "2024-12-10",
-          title: "DeepSeek-V2.5-1210",
-          details: [
-            "数学能力：MATH-500 从 74.8% 提升至 82.8%",
-            "代码能力：LiveCodebench 从 29.2% 提升至 34.38%",
-            "优化文件上传和网页总结功能"
-          ]
-        }
-      ]
-    },
-    {
-      id: "pixel-updates",
-      icon: pixelIcon,
-      productName: "像素蛋糕",
-      title: "AI修图再进化：像素蛋糕发布手机版重磅更新，并邀行业伙伴共探增长",
-      date: "2025年9月23日",
-      category: "图像模型",
-      subtitles: [
-        "手机版迎AI功能革新，精修与创意玩法全面升级",
-        "聚焦AI与商业增长，像素系列核心会员峰会启动报名"
-      ],
-      content: `专业后期软件像素蛋糕正从产品功能和行业生态两个方向发力，为用户及合作伙伴带来一系列更新。
+  }, {
+    id: "deepseek-updates",
+    icon: deepseekIcon,
+    productName: "DeepSeek",
+    title: "DeepSeek更新回顾",
+    date: "2025年9月23日",
+    category: "基础大模型",
+    timeline: [{
+      date: "2025-09-29",
+      title: "DeepSeek-V3.2-Exp",
+      details: ["deepseek-chat 和 deepseek-reasoner 都已升级为 DeepSeek-V3.2-Exp", "deepseek-chat 对应非思考模式，deepseek-reasoner 对应思考模式"]
+    }, {
+      date: "2025-09-22",
+      title: "DeepSeek-V3.1-Terminus",
+      details: ["语言一致性：缓解了中英文混杂、偶发异常字符等情况", "Agent能力：进一步优化了 Code Agent 与 Search Agent 的表现"]
+    }, {
+      date: "2025-08-21",
+      title: "DeepSeek-V3.1",
+      details: ["混合推理架构：一个模型同时支持思考模式与非思考模式", "更高的思考效率：相比 DeepSeek-R1-0528，能在更短时间内给出答案", "更强的 Agent 能力：SWE-bench Verified 达到 66.0"]
+    }, {
+      date: "2025-05-28",
+      title: "deepseek-reasoner升级",
+      details: ["推理能力增强：AIME 2025 从 70.0 提升至 87.5，GPQA 从 71.5 提升至 81.0", "Web前端开发能力优化：生成的网页与游戏更加美观", "幻觉降低：极大程度抑制了幻觉问题", "新增 JSON Output 与 Function Calling 支持"]
+    }, {
+      date: "2025-03-24",
+      title: "deepseek-chat升级",
+      details: ["推理能力增强：MMLU-Pro 从 75.9 提升至 81.2，AIME 从 39.6 提升至 59.4", "Web前端开发能力优化：代码生成准确率提升", "中文写作能力升级：实现与R1写作风格对齐", "Function Calling 能力改进"]
+    }, {
+      date: "2025-01-20",
+      title: "DeepSeek-R1正式发布",
+      details: ["推出新模型 deepseek-reasoner (DeepSeek-R1)", "专注于推理能力的提升"]
+    }, {
+      date: "2024-12-26",
+      title: "DeepSeek-V3正式发布",
+      details: ["deepseek-chat 模型升级为 DeepSeek-V3", "全面提升各项能力指标"]
+    }, {
+      date: "2024-12-10",
+      title: "DeepSeek-V2.5-1210",
+      details: ["数学能力：MATH-500 从 74.8% 提升至 82.8%", "代码能力：LiveCodebench 从 29.2% 提升至 34.38%", "优化文件上传和网页总结功能"]
+    }]
+  }, {
+    id: "pixel-updates",
+    icon: pixelIcon,
+    productName: "像素蛋糕",
+    title: "AI修图再进化：像素蛋糕发布手机版重磅更新，并邀行业伙伴共探增长",
+    date: "2025年9月23日",
+    category: "图像模型",
+    subtitles: ["手机版迎AI功能革新，精修与创意玩法全面升级", "聚焦AI与商业增长，像素系列核心会员峰会启动报名"],
+    content: `专业后期软件像素蛋糕正从产品功能和行业生态两个方向发力，为用户及合作伙伴带来一系列更新。
 
 手机版迎AI功能革新，精修与创意玩法全面升级
 像素蛋糕手机版迎来了重大版本更新（Android 1.1版与iPhone 1.3版），上线了一系列由AI驱动的创意及精修功能，同时宣布多项基础功能永久免费。
@@ -228,79 +167,78 @@ OpenAI公布了其"Stargate"AI基础设施平台的重大扩展计划，宣布�
 
 聚焦AI与商业增长，像素系列核心会员峰会启动报名
 像素蛋糕宣布，将于10月20日至21日在广州万富希尔顿酒店举办"像素系列 | 核心会员经营增长峰会"。本次峰会聚焦AI时代的影像生产力重构，旨在为摄影行业的商家伙伴探讨"开源回流、提效降本"的增长之道。峰会汇集了来自前小米、前阿里巴巴的资深专家以及摄影行业的顶尖从业者，将围绕AI工作流、短视频获客、爆品打造、经营管理等核心议题展开分享。活动将设置经营主会场与技术专业分会场，以满足不同角色的学习需求。目前峰会已开放报名，限定200席位，像素系列会员可享专属优惠价格。`
-    }
-  ];
-
+  }];
   const deepseekArticle = articles.find(a => a.id === "deepseek-updates");
   const qwenArticle = articles.find(a => a.id === "qwen-updates");
-  
+
   // 解析通义千问的内容，按subtitle分割
   const parseQwenContent = (content: string, subtitles: string[]) => {
-    const sections: { title: string; content: string }[] = [];
+    const sections: {
+      title: string;
+      content: string;
+    }[] = [];
     const lines = content.split('\n');
-    
-    let currentSection = { title: '', content: '' };
+    let currentSection = {
+      title: '',
+      content: ''
+    };
     let inSection = false;
-    
     for (const line of lines) {
       const trimmed = line.trim();
-      
+
       // 检查是否是subtitle
       if (subtitles.includes(trimmed)) {
         // 保存前一个section
         if (currentSection.title && currentSection.content) {
-          sections.push({ ...currentSection });
+          sections.push({
+            ...currentSection
+          });
         }
         // 开始新section
-        currentSection = { title: trimmed, content: '' };
+        currentSection = {
+          title: trimmed,
+          content: ''
+        };
         inSection = true;
       } else if (inSection && trimmed) {
         // 添加内容到当前section
         currentSection.content += (currentSection.content ? '\n' : '') + trimmed;
       }
     }
-    
+
     // 保存最后一个section
     if (currentSection.title && currentSection.content) {
       sections.push(currentSection);
     }
-    
     return sections;
   };
-
-  return (
-    <div className="min-h-screen bg-background">
-      <TableOfContents items={articles.map(a => ({ id: a.id, title: a.title, category: a.category }))} />
+  return <div className="min-h-screen bg-background">
+      <TableOfContents items={articles.map(a => ({
+      id: a.id,
+      title: a.title,
+      category: a.category
+    }))} />
       <div className="max-w-3xl mx-auto px-6 py-12">
         <header className="mb-12">
-          <h1 className="text-4xl font-bold text-foreground mb-2">9月23日AI产品动态推送</h1>
-          <p className="text-sm text-muted-foreground">最新的人工智能技术更新与产品发布</p>
+          <h1 className="text-4xl font-bold text-foreground mb-2 text-center">9月23日AI产品动态推送</h1>
+          <p className="text-sm text-muted-foreground text-center">最新的人工智能技术更新与产品发布</p>
         </header>
 
         <div className="relative mb-12">
           <nav className="p-4 bg-muted/50 rounded-lg border border-border">
             <div className="flex gap-4 items-center justify-center">
-              {articles.map((article) => {
-                const subtitleCount = article.subtitles?.length || (article.timeline ? 1 : 0);
-                return (
-                  <a 
-                    key={article.id}
-                    href={`#${article.id}`}
-                    className="relative group transition-transform hover:scale-110"
-                  >
-                    <img 
-                      src={article.icon} 
-                      alt={article.title}
-                      className="w-8 h-8 rounded-lg object-cover transition-all"
-                    />
-                    {subtitleCount > 0 && (
-                      <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full text-[10px] font-semibold flex items-center justify-center" style={{ backgroundColor: '#9333EA', color: 'white' }}>
+              {articles.map(article => {
+              const subtitleCount = article.subtitles?.length || (article.timeline ? 1 : 0);
+              return <a key={article.id} href={`#${article.id}`} className="relative group transition-transform hover:scale-110">
+                    <img src={article.icon} alt={article.title} className="w-8 h-8 rounded-lg object-cover transition-all" />
+                    {subtitleCount > 0 && <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full text-[10px] font-semibold flex items-center justify-center" style={{
+                  backgroundColor: '#9333EA',
+                  color: 'white'
+                }}>
                         {subtitleCount}
-                      </span>
-                    )}
-                  </a>
-                );
-              })}
+                      </span>}
+                  </a>;
+            })}
             </div>
           </nav>
           <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent pointer-events-none rounded-l-lg" />
@@ -309,36 +247,18 @@ OpenAI公布了其"Stargate"AI基础设施平台的重大扩展计划，宣布�
 
         <main>
           {articles.map((article, index) => {
-            const showDivider = index > 0 && articles[index - 1].category !== article.category;
-            
-            return (
-              <div key={index}>
+          const showDivider = index > 0 && articles[index - 1].category !== article.category;
+          return <div key={index}>
                 {showDivider && <CategoryDivider category={article.category} />}
-                {article.id === "deepseek-updates" && deepseekArticle?.timeline ? (
-                  <ArticleCard
-                    id={article.id}
-                    icon={article.icon}
-                    productName={article.productName}
-                    title={article.title}
-                    date={article.date}
-                  >
+                {article.id === "deepseek-updates" && deepseekArticle?.timeline ? <ArticleCard id={article.id} icon={article.icon} productName={article.productName} title={article.title} date={article.date}>
                     <Timeline items={deepseekArticle.timeline} />
-                  </ArticleCard>
-                ) : article.id === "qwen-updates" && qwenArticle?.subtitles && qwenArticle?.content ? (
-                  <ArticleCard
-                    id={article.id}
-                    icon={article.icon}
-                    productName={article.productName}
-                    title={article.title}
-                    date={article.date}
-                  >
+                  </ArticleCard> : article.id === "qwen-updates" && qwenArticle?.subtitles && qwenArticle?.content ? <ArticleCard id={article.id} icon={article.icon} productName={article.productName} title={article.title} date={article.date}>
                     <div className="prose prose-slate max-w-none">
                       <p className="text-foreground/90 mb-6 leading-relaxed">
                         在今日的密集发布浪潮中，通义千问团队通过社交媒体预告了6个重大更新，涵盖新产品、开源项目和API接口，彰显了其在AI领域的快速迭代与全面布局。以下为今日发布的具体内容。
                       </p>
                       <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
-                        {parseQwenContent(qwenArticle.content, qwenArticle.subtitles).map((section, idx) => (
-                          <AccordionItem key={idx} value={`item-${idx}`}>
+                        {parseQwenContent(qwenArticle.content, qwenArticle.subtitles).map((section, idx) => <AccordionItem key={idx} value={`item-${idx}`}>
                             <AccordionTrigger className="text-left">
                               <div>
                                 <h3 className="text-lg font-semibold text-foreground">
@@ -352,49 +272,30 @@ OpenAI公布了其"Stargate"AI基础设施平台的重大扩展计划，宣布�
                             <AccordionContent className="text-foreground/90">
                               <div className="mt-2">
                               {section.content.split('\n').map((line, lineIdx) => {
-                                const trimmed = line.trim();
-                                if (trimmed.startsWith('-')) {
-                                  return (
-                                    <li key={lineIdx} className="ml-6 mb-2 list-disc">
+                          const trimmed = line.trim();
+                          if (trimmed.startsWith('-')) {
+                            return <li key={lineIdx} className="ml-6 mb-2 list-disc">
                                       {trimmed.substring(1).trim()}
-                                    </li>
-                                  );
-                                }
-                                return (
-                                  <p key={lineIdx} className="mb-3 leading-relaxed">
+                                    </li>;
+                          }
+                          return <p key={lineIdx} className="mb-3 leading-relaxed">
                                     {trimmed}
-                                  </p>
-                                );
-                              })}
+                                  </p>;
+                        })}
                               </div>
                             </AccordionContent>
-                          </AccordionItem>
-                        ))}
+                          </AccordionItem>)}
                       </Accordion>
                     </div>
-                  </ArticleCard>
-                ) : (
-                  <ArticleCard
-                    id={article.id}
-                    icon={article.icon}
-                    productName={article.productName}
-                    title={article.title}
-                    date={article.date}
-                    content={article.content}
-                    subtitles={article.subtitles}
-                  />
-                )}
-              </div>
-            );
-          })}
+                  </ArticleCard> : <ArticleCard id={article.id} icon={article.icon} productName={article.productName} title={article.title} date={article.date} content={article.content} subtitles={article.subtitles} />}
+              </div>;
+        })}
         </main>
 
         <footer className="mt-16 pt-8 border-t border-border text-center text-sm text-muted-foreground">
           <p>© 2025 AI动态简报 · 技术突破与产品创新</p>
         </footer>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
