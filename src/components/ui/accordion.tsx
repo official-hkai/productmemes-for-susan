@@ -9,8 +9,8 @@ const Accordion = AccordionPrimitive.Root;
 
 const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> & { index?: number }
->(({ className, index = 0, ...props }, ref) => {
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> & { index?: number; isLast?: boolean }
+>(({ className, index = 0, isLast = false, ...props }, ref) => {
   // 定义彩色渐变背景色数组
   const colors = [
     'bg-gradient-to-r from-purple-200 to-purple-300',
@@ -31,7 +31,8 @@ const AccordionItem = React.forwardRef<
       ref={ref} 
       style={{ zIndex: baseZIndex } as React.CSSProperties}
       className={cn(
-        "rounded-t-2xl overflow-hidden transition-all duration-300 relative",
+        isLast ? "rounded-2xl" : "rounded-t-2xl",
+        "overflow-hidden transition-all duration-300 relative",
         "shadow-[0_4px_12px_rgba(0,0,0,0.08)]",
         "hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] hover:-translate-y-2",
         "data-[state=open]:shadow-[0_8px_24px_rgba(0,0,0,0.12)]",
