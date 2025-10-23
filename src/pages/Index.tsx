@@ -15,6 +15,7 @@ import claudeIcon from "@/assets/claude-color.svg";
 import metasoIcon from "@/assets/metaso-icon.png";
 import wenxinIcon from "@/assets/wenxin-color.svg";
 import liblibaiIcon from "@/assets/liblibai-icon.jpg";
+import fireIcon from "@/assets/fire-icon.png";
 interface TimelineItem {
   date: string;
   title: string;
@@ -355,7 +356,8 @@ WAN 2.5 是 LiblibAI 与通义万相团队联合研发的前沿多感官模型�
       category: a.category
     }))} />
       <div className="max-w-3xl mx-auto px-6 py-12">
-        <header className="mb-12">
+        <header className="mb-12 relative">
+          <img src={fireIcon} alt="Hot" className="absolute top-0 right-0 w-6 h-6" />
           <h1 className="text-4xl font-bold text-foreground mb-2 text-center">9月23日AI产品动态推送</h1>
           <p className="text-sm text-muted-foreground text-center">最新的人工智能技术更新与产品发布</p>
         </header>
