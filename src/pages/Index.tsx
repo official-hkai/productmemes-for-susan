@@ -357,7 +357,10 @@ WAN 2.5 是 LiblibAI 与通义万相团队联合研发的前沿多感官模型�
     }))} />
       <div className="max-w-3xl mx-auto px-6 py-12">
         <header className="mb-12">
-          <h1 className="text-4xl font-bold text-foreground mb-2 text-center">9月23日AI产品动态推送</h1>
+          <div className="flex items-start justify-center gap-2 mb-2">
+            <h1 className="text-4xl font-bold text-foreground text-center">9月23日AI产品动态推送</h1>
+            <span className="text-3xl">🔥</span>
+          </div>
           <p className="text-sm text-muted-foreground text-center">最新的人工智能技术更新与产品发布</p>
         </header>
 
