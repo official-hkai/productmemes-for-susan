@@ -42,7 +42,7 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between p-5 cursor-pointer group",
+        "flex flex-1 items-center justify-between py-6 px-5 cursor-pointer group",
         "transition-all duration-200",
         className,
       )}
@@ -76,7 +76,7 @@ const AccordionContent = React.forwardRef<
       transition={{ duration: 0.3, ease: 'easeInOut' }}
       className="bg-white/50 backdrop-blur-sm"
     >
-      <div className={cn("px-5 pb-5 pt-2", className)}>
+      <div className={cn("px-5 pb-6 pt-2", className)}>
         {children}
       </div>
     </motion.div>
