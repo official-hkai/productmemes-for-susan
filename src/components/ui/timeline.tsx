@@ -35,8 +35,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             key={index}
             className="flex justify-start pt-10 md:pt-16 md:gap-2"
           >
-            <div className="sticky flex flex-col md:flex-row z-40 items-end md:items-center top-40 self-start md:w-auto md:gap-4">
-              <div className="hidden md:flex flex-col items-end text-right md:w-[5.5rem]">
+            <div className="sticky flex flex-col md:flex-row z-40 items-end md:items-center top-40 self-start md:gap-4" style={{ width: '7.5rem' }}>
+              <div className="hidden md:flex flex-col items-end text-right pr-4 flex-1">
                 <span className="text-xl font-bold text-foreground leading-tight">
                   {item.title.split('-').slice(1).join('-')}
                 </span>
@@ -44,7 +44,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                   {item.title.split('-')[0]}
                 </span>
               </div>
-              <div className="h-10 w-10 rounded-full bg-background dark:bg-background flex items-center justify-center relative flex-shrink-0">
+              <div className="h-10 w-10 rounded-full bg-background dark:bg-background flex items-center justify-center relative flex-shrink-0" style={{ marginLeft: '-1.25rem' }}>
                 <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
               </div>
             </div>
@@ -67,8 +67,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             style={{
               height: heightTransform,
               opacity: opacityTransform,
+              background: 'linear-gradient(to top, #A60000 0%, #A60000 10%, transparent 100%)'
             }}
-            className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-purple-500 via-blue-500 to-transparent from-[0%] via-[10%] rounded-full"
+            className="absolute inset-x-0 top-0 w-[2px] rounded-full"
           />
         </div>
       </div>
