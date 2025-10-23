@@ -38,11 +38,11 @@ const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
 >(({ className, children, ...props }, ref) => (
-  <AccordionPrimitive.Header className="flex">
+  <AccordionPrimitive.Header className="flex relative">
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between pt-4 pb-6 px-5 cursor-pointer group",
+        "flex flex-1 items-center pt-4 pb-6 pl-5 pr-16 cursor-pointer group",
         "transition-all duration-200",
         className,
       )}
@@ -50,14 +50,14 @@ const AccordionTrigger = React.forwardRef<
     >
       {children}
       <motion.div
-        className="w-12 h-12 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 group-data-[state=open]:rotate-180"
+        className="absolute right-5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 group-data-[state=open]:rotate-180"
         style={{
           background: 'linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%)',
           border: '2px solid rgba(255,255,255,0.5)',
           boxShadow: '0 2px 8px rgba(0,0,0,0.1), inset 0 1px 2px rgba(255,255,255,0.3)'
         }}
       >
-        <ChevronDown className="w-5 h-5 text-foreground/70" />
+        <ChevronDown className="w-4 h-4 text-foreground/70" />
       </motion.div>
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
