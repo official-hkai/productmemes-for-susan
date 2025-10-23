@@ -28,8 +28,9 @@ const AccordionItem = React.forwardRef<
     <AccordionPrimitive.Item 
       ref={ref} 
       className={cn(
-        "rounded-2xl overflow-hidden shadow-md transition-all duration-300",
-        "hover:shadow-lg data-[state=open]:shadow-xl data-[state=open]:z-10",
+        "rounded-2xl overflow-hidden shadow-md transition-all duration-300 relative",
+        "hover:shadow-xl hover:-translate-y-2 hover:z-20",
+        "data-[state=open]:shadow-xl data-[state=open]:z-10",
         index > 0 && "-mt-4",
         colorClass,
         className
