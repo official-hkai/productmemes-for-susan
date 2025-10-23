@@ -28,7 +28,7 @@ const ArticleCard = ({ icon, productName, title, date, content, subtitles = [], 
           </div>
           <span className="text-xs text-muted-foreground text-center">{productName}</span>
         </div>
-        <h2 className="text-2xl font-bold text-foreground leading-tight -mt-1">
+        <h2 className="text-2xl font-bold text-foreground leading-tight">
           {title}
         </h2>
       </div>
