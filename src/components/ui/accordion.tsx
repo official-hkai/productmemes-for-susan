@@ -31,11 +31,11 @@ const AccordionItem = React.forwardRef<
       ref={ref} 
       style={{ zIndex: baseZIndex } as React.CSSProperties}
       className={cn(
-        "rounded-2xl overflow-hidden transition-all duration-300 relative",
+        "rounded-t-2xl overflow-hidden transition-all duration-300 relative",
         "shadow-[0_4px_12px_rgba(0,0,0,0.08)]",
         "hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] hover:-translate-y-2",
         "data-[state=open]:shadow-[0_8px_24px_rgba(0,0,0,0.12)]",
-        index > 0 && "-mt-3",
+        index > 0 && "-mt-4",
         colorClass,
         className
       )}
