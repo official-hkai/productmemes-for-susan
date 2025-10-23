@@ -37,7 +37,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           >
             <div className="sticky flex flex-col md:flex-row z-40 items-end md:items-center top-40 self-start w-[7.5rem] md:gap-4">
               <div className="hidden md:flex flex-col items-end text-right pr-4 flex-1">
-                <span className="text-xl font-bold text-foreground leading-tight">
+                <span className="text-xl font-bold text-foreground leading-tight whitespace-nowrap">
                   {item.title.split('-').slice(1).join('-')}
                 </span>
                 <span className="text-xs text-neutral-400 dark:text-neutral-500 leading-tight mt-0.5">
