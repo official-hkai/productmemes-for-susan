@@ -35,8 +35,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             key={index}
             className="flex justify-start pt-10 md:pt-16 md:gap-2"
           >
-            <div className="sticky flex flex-col md:flex-row z-40 items-end md:items-center top-40 self-start w-[7.5rem] md:gap-4">
-              <div className="hidden md:flex flex-col items-end text-right pr-4 flex-1">
+            <div className="sticky flex flex-col md:flex-row z-40 items-end md:items-center top-40 self-start w-[7.5rem]">
+              <div className="hidden md:flex flex-col items-end text-right flex-1">
                 <span className="text-xl font-bold text-foreground leading-tight whitespace-nowrap">
                   {item.title.split('-').slice(1).join('-')}
                 </span>
@@ -44,7 +44,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                   {item.title.split('-')[0]}
                 </span>
               </div>
-              <div className="h-10 w-10 rounded-full bg-background dark:bg-background flex items-center justify-center relative flex-shrink-0 translate-x-1/2">
+              <div className="h-10 w-10 rounded-full bg-background dark:bg-background flex items-center justify-center relative flex-shrink-0 -mr-5">
                 <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
               </div>
             </div>
