@@ -11,18 +11,6 @@ const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> & { index?: number; isLast?: boolean }
 >(({ className, index = 0, isLast = false, ...props }, ref) => {
-  // 定义边框渐变色数组 - 使用#A60000的深浅变化
-  const borderColors = [
-    'border-l-8 border-l-[#A60000]',     // 深红
-    'border-l-8 border-l-[#C61010]',     // 中深红
-    'border-l-8 border-l-[#D62020]',     // 中红
-    'border-l-8 border-l-[#E63030]',     // 中浅红
-    'border-l-8 border-l-[#B81010]',     // 稍深红
-    'border-l-8 border-l-[#CC1818]',     // 中等红
-    'border-l-8 border-l-[#DD2828]',     // 浅红
-  ];
-  
-  const borderClass = borderColors[index % borderColors.length];
   // 后面的卡片有更高的 z-index，确保它们始终在前面的卡片上方
   const baseZIndex = 10 + index * 2;
   
@@ -34,7 +22,6 @@ const AccordionItem = React.forwardRef<
         isLast ? "rounded-2xl" : "rounded-t-2xl",
         "overflow-hidden transition-all duration-300 relative",
         "bg-[#f5f2ed]", // 淡米白色背景
-        borderClass,
         "shadow-[0_6px_16px_rgba(0,0,0,0.15)]",
         "hover:shadow-[0_10px_28px_rgba(0,0,0,0.2)] hover:-translate-y-2",
         "data-[state=open]:shadow-[0_10px_28px_rgba(0,0,0,0.2)]",
