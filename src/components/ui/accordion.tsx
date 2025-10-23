@@ -9,17 +9,34 @@ const Accordion = AccordionPrimitive.Root;
 
 const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
->(({ className, ...props }, ref) => (
-  <AccordionPrimitive.Item 
-    ref={ref} 
-    className={cn(
-      "mb-4 border border-border rounded-lg overflow-hidden",
-      className
-    )} 
-    {...props} 
-  />
-));
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> & { index?: number }
+>(({ className, index = 0, ...props }, ref) => {
+  // 定义彩色渐变背景色数组
+  const colors = [
+    'bg-gradient-to-r from-purple-100 to-purple-200',
+    'bg-gradient-to-r from-yellow-100 to-yellow-200',
+    'bg-gradient-to-r from-blue-100 to-blue-200',
+    'bg-gradient-to-r from-orange-100 to-orange-200',
+    'bg-gradient-to-r from-pink-100 to-pink-200',
+    'bg-gradient-to-r from-green-100 to-green-200',
+    'bg-gradient-to-r from-indigo-100 to-indigo-200',
+  ];
+  
+  const colorClass = colors[index % colors.length];
+  
+  return (
+    <AccordionPrimitive.Item 
+      ref={ref} 
+      className={cn(
+        "mb-3 rounded-2xl overflow-hidden shadow-sm transition-all duration-300",
+        "hover:shadow-md data-[state=open]:shadow-lg",
+        colorClass,
+        className
+      )}
+      {...props} 
+    />
+  );
+});
 AccordionItem.displayName = "AccordionItem";
 
 const AccordionTrigger = React.forwardRef<
@@ -30,7 +47,9 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between p-4 cursor-pointer group",
+        "flex flex-1 items-center justify-between p-5 cursor-pointer group",
+        "transition-all duration-200",
+        "hover:bg-white/40",
         className,
       )}
       {...props}
@@ -61,8 +80,9 @@ const AccordionContent = React.forwardRef<
       animate={{ height: 'auto', opacity: 1 }}
       exit={{ height: 0, opacity: 0 }}
       transition={{ duration: 0.3, ease: 'easeInOut' }}
+      className="bg-white/50 backdrop-blur-sm"
     >
-      <div className={cn("p-4 pt-0 border-t border-border", className)}>
+      <div className={cn("px-5 pb-5 pt-2", className)}>
         {children}
       </div>
     </motion.div>

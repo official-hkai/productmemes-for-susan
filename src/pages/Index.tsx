@@ -401,8 +401,8 @@ WAN 2.5 是 LiblibAI 与通义万相团队联合研发的前沿多感官模型�
                       <p className="text-foreground/90 mb-6 leading-relaxed">
                         在今日的密集发布浪潮中，通义千问团队通过社交媒体预告了6个重大更新，涵盖新产品、开源项目和API接口，彰显了其在AI领域的快速迭代与全面布局。以下为今日发布的具体内容。
                       </p>
-                      <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
-                        {parseQwenContent(qwenArticle.content, qwenArticle.subtitles).map((section, idx) => <AccordionItem key={idx} value={`item-${idx}`}>
+                      <Accordion type="single" collapsible defaultValue="item-0" className="w-full space-y-0">
+                        {parseQwenContent(qwenArticle.content, qwenArticle.subtitles).map((section, idx) => <AccordionItem key={idx} value={`item-${idx}`} index={idx}>
                             <AccordionTrigger className="text-left">
                               <div>
                                 <h3 className="text-lg font-semibold text-foreground">
