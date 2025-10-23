@@ -35,7 +35,7 @@ const AccordionItem = React.forwardRef<
         "shadow-[0_4px_12px_rgba(0,0,0,0.08)]",
         "hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] hover:-translate-y-2",
         "data-[state=open]:shadow-[0_8px_24px_rgba(0,0,0,0.12)]",
-        index > 0 && "-mt-4",
+        index > 0 && "-mt-3",
         colorClass,
         className
       )}
