@@ -64,7 +64,7 @@ export function ProductDock({ products }: ProductDockProps) {
                         }`}
                       />
                     </DockIcon>
-                    <span className="absolute -bottom-0.5 -right-0.5 w-5 h-5 rounded-full text-white text-[10px] font-semibold flex items-center justify-center shadow-md" style={{ backgroundColor: '#A60000' }}>
+                    <span className="absolute -bottom-0.5 -right-0.5 w-5 h-5 rounded-full text-white text-[10px] font-semibold flex items-center justify-center shadow-md" style={{ backgroundColor: 'rgb(166, 0, 0)' }}>
                       {product.count}
                     </span>
                   </DockItem>
