@@ -11,15 +11,15 @@ const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> & { index?: number; isLast?: boolean }
 >(({ className, index = 0, isLast = false, ...props }, ref) => {
-  // 定义彩色渐变背景色数组
+  // 定义彩色渐变背景色数组 - 使用柔和的中性色调
   const colors = [
-    'bg-gradient-to-r from-purple-200 to-purple-300',
-    'bg-gradient-to-r from-yellow-200 to-yellow-300',
-    'bg-gradient-to-r from-blue-200 to-blue-300',
-    'bg-gradient-to-r from-orange-200 to-orange-300',
-    'bg-gradient-to-r from-pink-200 to-pink-300',
-    'bg-gradient-to-r from-green-200 to-green-300',
-    'bg-gradient-to-r from-indigo-200 to-indigo-300',
+    'bg-[#c9bfb5]',  // 米灰色
+    'bg-[#e8dfd3]',  // 浅米色
+    'bg-[#b5a99a]',  // 深米色
+    'bg-[#d4c7b8]',  // 中米色
+    'bg-[#bfb3a5]',  // 灰米色
+    'bg-[#ddd4c8]',  // 浅灰米色
+    'bg-[#afa394]',  // 深灰米色
   ];
   
   const colorClass = colors[index % colors.length];
@@ -33,9 +33,9 @@ const AccordionItem = React.forwardRef<
       className={cn(
         isLast ? "rounded-2xl" : "rounded-t-2xl",
         "overflow-hidden transition-all duration-300 relative",
-        "shadow-[0_4px_12px_rgba(0,0,0,0.08)]",
-        "hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] hover:-translate-y-2",
-        "data-[state=open]:shadow-[0_8px_24px_rgba(0,0,0,0.12)]",
+        "shadow-[0_6px_16px_rgba(0,0,0,0.15)]",
+        "hover:shadow-[0_10px_28px_rgba(0,0,0,0.2)] hover:-translate-y-2",
+        "data-[state=open]:shadow-[0_10px_28px_rgba(0,0,0,0.2)]",
         index > 0 && "-mt-4",
         colorClass,
         className
