@@ -23,8 +23,8 @@ const AccordionItem = React.forwardRef<
   ];
   
   const colorClass = colors[index % colors.length];
-  // 前面的卡片有更高的 z-index，确保它们始终在后面的卡片上方
-  const baseZIndex = 50 - index * 2;
+  // 后面的卡片有更高的 z-index，确保它们始终在前面的卡片上方
+  const baseZIndex = 10 + index * 2;
   
   return (
     <AccordionPrimitive.Item 
