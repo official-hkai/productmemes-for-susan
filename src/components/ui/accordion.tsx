@@ -21,7 +21,7 @@ const AccordionItem = React.forwardRef<
       className={cn(
         isLast ? "rounded-2xl" : "rounded-t-2xl",
         "overflow-hidden transition-all duration-300 relative",
-        "bg-[#f5f2ed]/50", // 淡米白色背景，50%透明度
+        "bg-[#f5f2ed]", // 淡米白色背景
         "shadow-[0_6px_16px_rgba(0,0,0,0.15)]",
         "hover:shadow-[0_10px_28px_rgba(0,0,0,0.2)] hover:-translate-y-2",
         "data-[state=open]:shadow-[0_10px_28px_rgba(0,0,0,0.2)]",
