@@ -11,15 +11,15 @@ const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> & { index?: number; isLast?: boolean }
 >(({ className, index = 0, isLast = false, ...props }, ref) => {
-  // 定义彩色渐变背景色数组 - 使用柔和的中性色调
+  // 定义彩色渐变背景色数组 - 使用浅米色/象牙白色调
   const colors = [
-    'bg-[#c9bfb5]',  // 米灰色
-    'bg-[#e8dfd3]',  // 浅米色
-    'bg-[#b5a99a]',  // 深米色
-    'bg-[#d4c7b8]',  // 中米色
-    'bg-[#bfb3a5]',  // 灰米色
-    'bg-[#ddd4c8]',  // 浅灰米色
-    'bg-[#afa394]',  // 深灰米色
+    'bg-[#e8e4dc]',  // 浅米色
+    'bg-[#f0ebe3]',  // 象牙白
+    'bg-[#ddd8cf]',  // 米灰色
+    'bg-[#ebe7df]',  // 浅象牙色
+    'bg-[#e1ddd5]',  // 中米色
+    'bg-[#ede9e1]',  // 浅米白
+    'bg-[#d9d4cb]',  // 深米色
   ];
   
   const colorClass = colors[index % colors.length];
