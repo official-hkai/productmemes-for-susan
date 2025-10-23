@@ -11,18 +11,18 @@ const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> & { index?: number; isLast?: boolean }
 >(({ className, index = 0, isLast = false, ...props }, ref) => {
-  // 定义彩色渐变背景色数组 - 使用浅米色/象牙白色调
-  const colors = [
-    'bg-[#e8e4dc]',  // 浅米色
-    'bg-[#f0ebe3]',  // 象牙白
-    'bg-[#ddd8cf]',  // 米灰色
-    'bg-[#ebe7df]',  // 浅象牙色
-    'bg-[#e1ddd5]',  // 中米色
-    'bg-[#ede9e1]',  // 浅米白
-    'bg-[#d9d4cb]',  // 深米色
+  // 定义边框渐变色数组 - 使用#A60000的深浅变化
+  const borderColors = [
+    'border-l-8 border-l-[#A60000]',     // 深红
+    'border-l-8 border-l-[#C61010]',     // 中深红
+    'border-l-8 border-l-[#D62020]',     // 中红
+    'border-l-8 border-l-[#E63030]',     // 中浅红
+    'border-l-8 border-l-[#B81010]',     // 稍深红
+    'border-l-8 border-l-[#CC1818]',     // 中等红
+    'border-l-8 border-l-[#DD2828]',     // 浅红
   ];
   
-  const colorClass = colors[index % colors.length];
+  const borderClass = borderColors[index % borderColors.length];
   // 后面的卡片有更高的 z-index，确保它们始终在前面的卡片上方
   const baseZIndex = 10 + index * 2;
   
@@ -33,11 +33,12 @@ const AccordionItem = React.forwardRef<
       className={cn(
         isLast ? "rounded-2xl" : "rounded-t-2xl",
         "overflow-hidden transition-all duration-300 relative",
+        "bg-[#f5f2ed]", // 淡米白色背景
+        borderClass,
         "shadow-[0_6px_16px_rgba(0,0,0,0.15)]",
         "hover:shadow-[0_10px_28px_rgba(0,0,0,0.2)] hover:-translate-y-2",
         "data-[state=open]:shadow-[0_10px_28px_rgba(0,0,0,0.2)]",
         index > 0 && "-mt-4",
-        colorClass,
         className
       )}
       {...props} 
