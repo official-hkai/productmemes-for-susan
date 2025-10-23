@@ -15,17 +15,12 @@ const ArticleCard = ({ icon, productName, title, date, content, subtitles = [], 
   return (
     <article id={id} className="border-b border-border pb-12 mb-12 last:border-b-0 scroll-mt-6">
       <div className="flex items-start gap-3 mb-6">
-        <div className="flex flex-col items-center gap-1 flex-shrink-0 -ml-[72px] w-16 relative">
-          <div className="relative">
-            <img 
-              src={icon} 
-              alt={productName} 
-              className="w-12 h-12 rounded-lg object-cover"
-            />
-            {productName === "通义千问" && (
-              <span className="absolute -top-1 -right-1 text-xl">🔥</span>
-            )}
-          </div>
+        <div className="flex flex-col items-center gap-1 flex-shrink-0 -ml-[72px] w-16">
+          <img 
+            src={icon} 
+            alt={productName} 
+            className="w-12 h-12 rounded-lg object-cover"
+          />
           <span className="text-xs text-muted-foreground text-center">{productName}</span>
         </div>
         <h2 className="text-2xl font-bold text-foreground leading-tight">
