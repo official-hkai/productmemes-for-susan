@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { Plus } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { cn } from "@/lib/utils";
@@ -50,10 +50,14 @@ const AccordionTrigger = React.forwardRef<
     >
       {children}
       <motion.div
-        animate={{ rotate: 0 }}
-        className="w-8 h-8 rounded-full border border-border flex items-center justify-center shrink-0 group-data-[state=open]:rotate-45 transition-transform duration-200"
+        className="w-12 h-12 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 group-data-[state=open]:rotate-180"
+        style={{
+          background: 'linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%)',
+          border: '2px solid rgba(255,255,255,0.5)',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.1), inset 0 1px 2px rgba(255,255,255,0.3)'
+        }}
       >
-        <Plus className="w-4 h-4 text-muted-foreground" />
+        <ChevronDown className="w-5 h-5 text-foreground/70" />
       </motion.div>
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
