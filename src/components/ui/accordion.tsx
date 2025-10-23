@@ -13,13 +13,13 @@ const AccordionItem = React.forwardRef<
 >(({ className, index = 0, ...props }, ref) => {
   // 定义彩色渐变背景色数组
   const colors = [
-    'bg-gradient-to-r from-purple-100 to-purple-200',
-    'bg-gradient-to-r from-yellow-100 to-yellow-200',
-    'bg-gradient-to-r from-blue-100 to-blue-200',
-    'bg-gradient-to-r from-orange-100 to-orange-200',
-    'bg-gradient-to-r from-pink-100 to-pink-200',
-    'bg-gradient-to-r from-green-100 to-green-200',
-    'bg-gradient-to-r from-indigo-100 to-indigo-200',
+    'bg-gradient-to-r from-purple-200 to-purple-300',
+    'bg-gradient-to-r from-yellow-200 to-yellow-300',
+    'bg-gradient-to-r from-blue-200 to-blue-300',
+    'bg-gradient-to-r from-orange-200 to-orange-300',
+    'bg-gradient-to-r from-pink-200 to-pink-300',
+    'bg-gradient-to-r from-green-200 to-green-300',
+    'bg-gradient-to-r from-indigo-200 to-indigo-300',
   ];
   
   const colorClass = colors[index % colors.length];
@@ -28,8 +28,9 @@ const AccordionItem = React.forwardRef<
     <AccordionPrimitive.Item 
       ref={ref} 
       className={cn(
-        "mb-3 rounded-2xl overflow-hidden shadow-sm transition-all duration-300",
-        "hover:shadow-md data-[state=open]:shadow-lg",
+        "rounded-2xl overflow-hidden shadow-md transition-all duration-300",
+        "hover:shadow-lg data-[state=open]:shadow-xl data-[state=open]:z-10",
+        index > 0 && "-mt-4",
         colorClass,
         className
       )}
