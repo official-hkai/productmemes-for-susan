@@ -14,7 +14,7 @@ const ArticleCard = ({ icon, productName, title, date, content, subtitles = [], 
 
   return (
     <article id={id} className="border-b border-border pb-12 mb-12 last:border-b-0 scroll-mt-6">
-      <div className="flex items-start gap-3 mb-6">
+      <div className="flex items-center gap-3 mb-6">
         <div className="flex flex-col items-center gap-1 flex-shrink-0 -ml-[72px] w-16 relative">
           <div className="relative">
             <img 
