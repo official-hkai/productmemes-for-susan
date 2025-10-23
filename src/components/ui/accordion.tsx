@@ -33,8 +33,8 @@ const AccordionItem = React.forwardRef<
       className={cn(
         "rounded-2xl overflow-hidden transition-all duration-300 relative",
         "shadow-[0_4px_12px_rgba(0,0,0,0.08)]",
-        "hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] hover:-translate-y-2 hover:!z-[100]",
-        "data-[state=open]:shadow-[0_8px_24px_rgba(0,0,0,0.12)] data-[state=open]:!z-[100]",
+        "hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] hover:-translate-y-2",
+        "data-[state=open]:shadow-[0_8px_24px_rgba(0,0,0,0.12)]",
         index > 0 && "-mt-4",
         colorClass,
         className
