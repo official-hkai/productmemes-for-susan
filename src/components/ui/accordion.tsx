@@ -28,9 +28,10 @@ const AccordionItem = React.forwardRef<
     <AccordionPrimitive.Item 
       ref={ref} 
       className={cn(
-        "rounded-2xl overflow-hidden shadow-md transition-all duration-300 relative",
-        "hover:shadow-xl hover:-translate-y-2 hover:z-20",
-        "data-[state=open]:shadow-xl data-[state=open]:z-10",
+        "rounded-2xl overflow-hidden transition-all duration-300 relative",
+        "shadow-[0_4px_12px_rgba(0,0,0,0.08)]",
+        "hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] hover:-translate-y-2 hover:z-20",
+        "data-[state=open]:shadow-[0_8px_24px_rgba(0,0,0,0.12)] data-[state=open]:z-10",
         index > 0 && "-mt-4",
         colorClass,
         className
@@ -51,7 +52,6 @@ const AccordionTrigger = React.forwardRef<
       className={cn(
         "flex flex-1 items-center justify-between p-5 cursor-pointer group",
         "transition-all duration-200",
-        "hover:bg-white/40",
         className,
       )}
       {...props}
