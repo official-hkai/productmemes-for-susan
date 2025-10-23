@@ -23,15 +23,18 @@ const AccordionItem = React.forwardRef<
   ];
   
   const colorClass = colors[index % colors.length];
+  // 前面的卡片有更高的 z-index，确保它们始终在后面的卡片上方
+  const baseZIndex = 50 - index * 2;
   
   return (
     <AccordionPrimitive.Item 
       ref={ref} 
+      style={{ zIndex: baseZIndex } as React.CSSProperties}
       className={cn(
         "rounded-2xl overflow-hidden transition-all duration-300 relative",
         "shadow-[0_4px_12px_rgba(0,0,0,0.08)]",
-        "hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] hover:-translate-y-2 hover:z-20",
-        "data-[state=open]:shadow-[0_8px_24px_rgba(0,0,0,0.12)] data-[state=open]:z-10",
+        "hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] hover:-translate-y-2 hover:!z-[100]",
+        "data-[state=open]:shadow-[0_8px_24px_rgba(0,0,0,0.12)] data-[state=open]:!z-[100]",
         index > 0 && "-mt-4",
         colorClass,
         className
