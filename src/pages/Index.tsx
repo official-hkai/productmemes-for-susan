@@ -199,6 +199,7 @@ Anthropic 公司宣布与微软达成一项重要合作，自9月24日起，旗�
       title: "DeepSeek更新回顾",
       date: "2025年9月23日",
       category: "基础大模型",
+      subtitles: ["Deepseek沉默了一个月，又在憋什么大招？先回顾下过去它的精彩时刻！"],
       timeline: [{
         date: "2025-09-29",
         title: "DeepSeek-V3.2-Exp",
