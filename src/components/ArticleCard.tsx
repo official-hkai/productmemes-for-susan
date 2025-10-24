@@ -28,12 +28,18 @@ const ArticleCard = ({ icon, productName, title, date, content, subtitles = [], 
           </div>
           <span className="text-xs text-muted-foreground text-center">{productName}</span>
         </div>
-        <h2 className="text-2xl font-bold text-foreground leading-tight">
-          {title}
-        </h2>
-      </div>
-      
-      {children ? (
+      <h2 className="text-2xl font-bold text-foreground leading-tight">
+        {title}
+      </h2>
+    </div>
+    
+    {subtitles && subtitles.length > 0 && (
+      <p className="text-base text-muted-foreground mb-6 leading-relaxed">
+        {subtitles[0]}
+      </p>
+    )}
+    
+    {children ? (
         <div>{children}</div>
       ) : (
         <div className="prose prose-slate max-w-none">
